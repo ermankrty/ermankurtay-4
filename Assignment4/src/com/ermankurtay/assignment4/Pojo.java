@@ -1,35 +1,36 @@
+package com.ermankurtay.assignment4;
 
-	package com.ermankurtay.assignment4;
+import java.io.Serializable;
 
+public class Pojo implements Serializable{
+	private static final long serialVersionUID = 1L;
+	private String studentid;
+    private String studentname;
+    private String studentcourse;
+    private String studentgrade;
 
-	public class Pojo {
-		
-	    private String username;
-	    private String password;
-	    private String name;
-	   
+    public Pojo(String studentid, String studentname, String studentcourse,String studentgrade) {
+    	
+        this.studentid = studentid;
+        this.studentname = studentname;
+        this.studentcourse = studentcourse;
+        this.studentgrade = studentgrade;
+    }
 
-	    public Pojo(String username, String password, String name) {
-	        this.username = username;
-	        this.password = password;
-	        this.name = name;
-	        
-	    }
+    public String getStudentid() {
+        return studentid;
+    }
 
-	    public String getUsername() {
-	        return username;
-	    }
+    public String getStudentName() {
+        return studentname;
+    }
 
-	    public String getPassword() {
-	        return password;
-	    }
+    public String getStudentCourse() {
+        return studentcourse;
+    }
 
-	    public String getName() {
-	        return name;
-	    }
-
-
-	  
-	    
-	}
-
+    public String getStudentGrade() {
+    	
+    	return studentgrade;
+    }
+}
