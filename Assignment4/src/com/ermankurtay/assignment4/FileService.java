@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 
 public class FileService {
@@ -75,64 +76,109 @@ public class FileService {
         	
         }
 
-	private static void course3Filter(Pojo[] users, BufferedWriter buffered3Writer) throws IOException {
-		for(Pojo userr : users) {
+	
+    private static void course3Filter(Pojo[] users, BufferedWriter buffered3Writer) throws IOException {
+		
+    	Arrays.sort(users, (user1, user2) -> {
     		
-    		if(userr.getStudentCourse().contains("STAT") && userr != null) {
-    			
-    	        Pojo course3 = new Pojo(userr.getStudentid(), userr.getStudentName(),userr.getStudentCourse(),userr.getStudentGrade());
-    	         
+		    try {
+		        
+		    	int grade1 = Integer.parseInt(user1.getStudentGrade());
+		        
+		    	int grade2 = Integer.parseInt(user2.getStudentGrade());
+		       
+		    	return Integer.compare(grade2, grade1);
+		    } 
+		    
+		    catch (NumberFormatException x) {
+		        
+		    	return 0; 
+		    }
+		}
+    	
+    			);
 
+        for (Pojo userr : users) {
+        	
+            if (userr != null && userr.getStudentCourse().contains("COMPSCI")) {
+            	
+                Pojo course3 = new Pojo(userr.getStudentid(), userr.getStudentName(), userr.getStudentCourse(), userr.getStudentGrade());
                
                 buffered3Writer.write(course3.getStudentid() + ", " + course3.getStudentName() + ", " + course3.getStudentCourse() + ", " + course3.getStudentGrade());
                 
-                buffered3Writer.newLine(); 
-
-                
-    	        
-    																		  }
-    							}
-	}
+                buffered3Writer.newLine();
+            }
+        }
+    }
+	
 
 	private static void course2Filter(Pojo[] users, BufferedWriter buffered2Writer) throws IOException {
-		for(Pojo userr : users) {
-    		
-    		if(userr.getStudentCourse().contains("APMTH") && userr != null) {
-    			
-    	        Pojo course2 = new Pojo(userr.getStudentid(), userr.getStudentName(),userr.getStudentCourse(),userr.getStudentGrade());
-    	         
+		
+		Arrays.sort(users, (user1, user2) -> {
+		    
+			try {
+		        
+				int grade1 = Integer.parseInt(user1.getStudentGrade());
+		        
+				int grade2 = Integer.parseInt(user2.getStudentGrade());
+		        
+				return Integer.compare(grade2, grade1);
+		    } 
+			catch (NumberFormatException x) {
+		        
+				return 0; 
+		    }
+		}
+		);
 
-               
-                buffered2Writer.write(course2.getStudentid() + ", " + course2.getStudentName() + ", " + course2.getStudentCourse() + ", " + course2.getStudentGrade());
+        for (Pojo userr : users) {
+           
+        	if (userr != null && userr.getStudentCourse().contains("APMTH")) {
                 
-                buffered2Writer.newLine(); 
-
+        		Pojo course3 = new Pojo(userr.getStudentid(), userr.getStudentName(), userr.getStudentCourse(), userr.getStudentGrade());
                 
-    	        
-    																		  }
-    							}
-	}
+        		buffered2Writer.write(course3.getStudentid() + ", " + course3.getStudentName() + ", " + course3.getStudentCourse() + ", " + course3.getStudentGrade());
+                
+        		buffered2Writer.newLine();
+            }
+        }
+    }
 
 	private static void course1Filter(Pojo[] users, BufferedWriter buffered1Writer) throws IOException {
-		for(Pojo userr : users) {
-    		
-    		if(userr.getStudentCourse().contains("COMPSCI") && userr != null) {
-    			
-    	        Pojo course1 = new Pojo(userr.getStudentid(), userr.getStudentName(),userr.getStudentCourse(),userr.getStudentGrade());
-    	         
+		
+		Arrays.sort(users, (user1, user2) -> {
+		   
+			try {
+		       
+				int grade1 = Integer.parseInt(user1.getStudentGrade());
+		        
+		        int grade2 = Integer.parseInt(user2.getStudentGrade());
+		        
+		        return Integer.compare(grade2, grade1);
+		    } 
+			
+			catch (NumberFormatException x) {
+		        
+				return 0; 
+		    }
+		}
+		);
 
-               
-                buffered1Writer.write(course1.getStudentid() + ", " + course1.getStudentName() + ", " + course1.getStudentCourse() + ", " + course1.getStudentGrade());
+        for (Pojo userr : users) {
+        	
+            if (userr != null && userr.getStudentCourse().contains("STAT")) {
+            	
+                Pojo course3 = new Pojo(userr.getStudentid(), userr.getStudentName(), userr.getStudentCourse(), userr.getStudentGrade());
                 
-                buffered1Writer.newLine(); 
-
+                buffered1Writer.write(course3.getStudentid() + ", " + course3.getStudentName() + ", " + course3.getStudentCourse() + ", " + course3.getStudentGrade());
                 
-    	        
-    																		  }
-    							}
+                buffered1Writer.newLine();
+            }
+        }
+    }
 	}
     
-    	}
-    
+    	
+   
     
     		
