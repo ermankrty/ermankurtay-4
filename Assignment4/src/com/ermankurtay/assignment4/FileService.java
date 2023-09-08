@@ -79,13 +79,13 @@ public class FileService {
 	
     private static void course3Filter(Pojo[] users, BufferedWriter buffered3Writer) throws IOException {
 		
-    	Arrays.sort(users, (user1, user2) -> {
+    	Arrays.sort(users, (student1, student2) -> {
     		
 		    try {
 		        
-		    	int grade1 = Integer.parseInt(user1.getStudentGrade());
+		    	int grade1 = Integer.parseInt(student1.getStudentGrade());
 		        
-		    	int grade2 = Integer.parseInt(user2.getStudentGrade());
+		    	int grade2 = Integer.parseInt(student2.getStudentGrade());
 		       
 		    	return Integer.compare(grade2, grade1);
 		    } 
@@ -114,13 +114,13 @@ public class FileService {
 
 	private static void course2Filter(Pojo[] users, BufferedWriter buffered2Writer) throws IOException {
 		
-		Arrays.sort(users, (user1, user2) -> {
+		Arrays.sort(users, (student1, student2) -> {
 		    
 			try {
 		        
-				int grade1 = Integer.parseInt(user1.getStudentGrade());
+				int grade1 = Integer.parseInt(student1.getStudentGrade());
 		        
-				int grade2 = Integer.parseInt(user2.getStudentGrade());
+				int grade2 = Integer.parseInt(student2.getStudentGrade());
 		        
 				return Integer.compare(grade2, grade1);
 		    } 
@@ -146,13 +146,13 @@ public class FileService {
 
 	private static void course1Filter(Pojo[] users, BufferedWriter buffered1Writer) throws IOException {
 		
-		Arrays.sort(users, (user1, user2) -> {
+		Arrays.sort(users, (student1, student2) -> {
 		   
 			try {
 		       
-				int grade1 = Integer.parseInt(user1.getStudentGrade());
+				int grade1 = Integer.parseInt(student1.getStudentGrade());
 		        
-		        int grade2 = Integer.parseInt(user2.getStudentGrade());
+		        int grade2 = Integer.parseInt(student2.getStudentGrade());
 		        
 		        return Integer.compare(grade2, grade1);
 		    } 
