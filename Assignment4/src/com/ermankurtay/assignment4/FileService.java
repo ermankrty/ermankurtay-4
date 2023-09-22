@@ -46,7 +46,7 @@ public class FileService {
             fileReader.close();
         }    
         
-        FileWriter file1writer = new FileWriter("course1.txt");
+        FileWriter file1writer = new FileWriter("course1.csv");
 
         BufferedWriter buffered1Writer = new BufferedWriter(file1writer);
     	
@@ -54,7 +54,7 @@ public class FileService {
         
     	course1Filter(users, buffered1Writer);
     	
-    	FileWriter file2writer = new FileWriter("course2.txt");
+    	FileWriter file2writer = new FileWriter("course2.csv");
 
         BufferedWriter buffered2Writer = new BufferedWriter(file2writer);
     	
@@ -62,7 +62,7 @@ public class FileService {
         
     	course2Filter(users, buffered2Writer);
     	
-    	FileWriter file3writer = new FileWriter("course3.txt");
+    	FileWriter file3writer = new FileWriter("course3.csv");
 
         BufferedWriter buffered3Writer = new BufferedWriter(file3writer);
     	
@@ -77,7 +77,7 @@ public class FileService {
         }
 
 	
-    private static void course3Filter(Pojo[] users, BufferedWriter buffered3Writer) throws IOException {
+    private static void course1Filter(Pojo[] users, BufferedWriter buffered3Writer) throws IOException {
 		
     	Arrays.sort(users, (student1, student2) -> {
     		
@@ -144,7 +144,7 @@ public class FileService {
         }
     }
 
-	private static void course1Filter(Pojo[] users, BufferedWriter buffered1Writer) throws IOException {
+	private static void course3Filter(Pojo[] users, BufferedWriter buffered1Writer) throws IOException {
 		
 		Arrays.sort(users, (student1, student2) -> {
 		   
